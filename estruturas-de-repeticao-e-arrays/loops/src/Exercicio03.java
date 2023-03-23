@@ -27,11 +27,12 @@ public class Exercicio03 {
 
     private static void lerNumero() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite a numero:");
+        System.out.println("Digite um número:");
         try {
             numero = scanner.nextInt();
         } catch (Exception e) {
-            System.out.println("Valor digitado inválido");
+            System.out.println("Valor digitado inválido - 0 adicionado");
+            numero = 0;
         }
     }
     
