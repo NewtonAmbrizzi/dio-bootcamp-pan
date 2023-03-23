@@ -1,7 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "src",
-        "estruturas-de-repeticao-e-arrays/loops/src"
+        "estruturas-de-repeticao-e-arrays/arrays/src"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
