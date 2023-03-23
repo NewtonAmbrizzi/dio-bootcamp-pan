@@ -14,21 +14,18 @@ public class Exercicio04 {
         System.out.println("Quantos números deseja analisar?");
         lerNumero();
         int contador = numero;
-        int par = 0, impar = 0, neutro = 0;
+        int par = 0, impar = 0;
 
         if (contador > 0) {
             while (contador > 0) {
                 lerNumero();
-                if (numero == 0) {
-                    neutro++;
-                } else if (numero % 2 == 0) {
+                if (numero % 2 == 0) {
                     par++;
                 } else {
                     impar++;
                 }
                 contador--;
             }
-            System.out.println("Neutros: ".concat(Integer.toString(neutro)));
             System.out.println("Pares: ".concat(Integer.toString(par)));
             System.out.println("Ímpares: ".concat(Integer.toString(impar)));
 
