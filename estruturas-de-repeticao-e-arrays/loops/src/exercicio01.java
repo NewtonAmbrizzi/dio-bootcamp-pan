@@ -5,7 +5,7 @@ Faça um programa que leia conjuntos de dois valores, o primeiro representando o
 (Pare o programa inserindo o valor 0 no campo nome)
 */
 
-public class exercicio01 {
+public class Exercicio01 {
 
     static Scanner scanner = new Scanner(System.in);
     static String nome = "0";

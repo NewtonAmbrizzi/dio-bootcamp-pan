@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Mostre uma mensagem caso o valor seja inválido e continue pedindo até o usuário informar um valor válido
  */
 
- public class exercicio02 {
+ public class Exercicio02 {
 
     static int nota = 11;
     
