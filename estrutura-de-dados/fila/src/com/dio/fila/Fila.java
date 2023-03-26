@@ -27,6 +27,7 @@ public class Fila {
                     break;
                 }
             }
+            return primeiroNo;
         }
         return null;
     }
