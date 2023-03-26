@@ -2,7 +2,8 @@
     "java.project.sourcePaths": [
         "estruturas-de-repeticao-e-arrays/arrays/src",
         "estrutura-de-dados/src",
-        "estrutura-de-dados/pilha/src"
+        "estrutura-de-dados/pilha/src",
+        "estrutura-de-dados\\fila"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
