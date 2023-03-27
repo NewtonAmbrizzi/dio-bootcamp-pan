@@ -1,8 +1,8 @@
 package src.com.dio.fila;
 
-public class Fila {
-    
-    private No refNoEntradaFila;
+public class Fila<T> {
+
+    private No<T> refNoEntradaFila;
 
     public Fila() {
         this.refNoEntradaFila = null;
@@ -12,32 +12,33 @@ public class Fila {
         return refNoEntradaFila == null ? true : false;
     }
 
-    public void enqueue(No novoNo) {
+    public void enqueue(T object) {
+        No novoNo = new No(object);
         novoNo.setRefNo(this.refNoEntradaFila);
         this.refNoEntradaFila = novoNo;
     }
 
-    public No first() {
-        if(!this.isEmpty()){
+    public T first() {
+        if (!this.isEmpty()) {
             No primeiroNo = refNoEntradaFila;
-            while (true){
-                if(primeiroNo.getRefNo() != null) {
+            while (true) {
+                if (primeiroNo.getRefNo() != null) {
                     primeiroNo = primeiroNo.getRefNo();
                 } else {
                     break;
                 }
             }
-            return primeiroNo;
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
 
-    public No dequeue() {
-        if(!isEmpty()){
+    public T dequeue() {
+        if (!isEmpty()) {
             No primeiroNo = refNoEntradaFila;
             No noAuxiliar = refNoEntradaFila;
-            while (true){
-                if(primeiroNo.getRefNo() != null) {
+            while (true) {
+                if (primeiroNo.getRefNo() != null) {
                     noAuxiliar = primeiroNo;
                     primeiroNo = primeiroNo.getRefNo();
                 } else {
@@ -45,7 +46,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo;
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
@@ -55,8 +56,8 @@ public class Fila {
         String retorno = "";
         No noAuxiliar = refNoEntradaFila;
 
-        if(!isEmpty()) {
-            while (true){
+        if (!isEmpty()) {
+            while (true) {
                 retorno += "[No{objeto=" + noAuxiliar.getObject() + "}]--->";
                 if (noAuxiliar.getRefNo() != null) {
                     noAuxiliar = noAuxiliar.getRefNo();
@@ -72,7 +73,5 @@ public class Fila {
         return retorno;
 
     }
-
-    
 
 }
