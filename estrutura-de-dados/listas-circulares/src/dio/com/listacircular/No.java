@@ -2,10 +2,12 @@ package src.dio.com.listacircular;
 
 public class No<T> {
 
-    T element;
-    No<T> proximoNo;
+    private T element;
+    private No<T> proximoNo;
     
-    public No() {
+    public No(T element) {
+        this.element = element;
+        this.proximoNo = null;
     }
 
     public T getElement() {
