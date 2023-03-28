@@ -92,4 +92,20 @@ public class ListaDuplamenteEncadeada<T> {
 
     }
 
+    @Override
+    public String toString() {
+
+        String stringRetorno = "";
+        NoDuplo<T> noAuxiliar = primeiroNoDuplo;
+
+        for (int i = 0; i < size(); i++) {
+            stringRetorno = "[No{conteudo=" + noAuxiliar.getConteudo() + "}]-->";
+            noAuxiliar = noAuxiliar.getNoPosterior();
+        }
+        stringRetorno += "null";
+        return stringRetorno;
+    }
+
+    
+
 }
