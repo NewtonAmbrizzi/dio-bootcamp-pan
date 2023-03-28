@@ -21,7 +21,7 @@ public class ListaDuplamenteEncadeada<T> {
 
         NoDuplo<T> noAuxiliar = this.primeiroNoDuplo;
 
-        for (int i = 0; (i <= index) && (noAuxiliar != null); i++) {
+        for (int i = 0; (i < index) && (noAuxiliar != null); i++) {
             noAuxiliar = noAuxiliar.getNoPosterior();
         }
 
@@ -40,11 +40,16 @@ public class ListaDuplamenteEncadeada<T> {
         NoDuplo<T> novoNo = new NoDuplo<>(element);
         novoNo.setNoPosterior(null);
         novoNo.setNoAnterior(ultimoNoDuplo);
-        ultimoNoDuplo = novoNo;
-        this.tamanhoLista++;
+
         if (primeiroNoDuplo == null) {
             primeiroNoDuplo = novoNo;
+        } 
+        if (ultimoNoDuplo != null) {
+            ultimoNoDuplo.setNoPosterior(novoNo);
         }
+        ultimoNoDuplo = novoNo;
+
+        this.tamanhoLista++;
 
     }
 
@@ -99,13 +104,11 @@ public class ListaDuplamenteEncadeada<T> {
         NoDuplo<T> noAuxiliar = primeiroNoDuplo;
 
         for (int i = 0; i < size(); i++) {
-            stringRetorno = "[No{conteudo=" + noAuxiliar.getConteudo() + "}]-->";
+            stringRetorno += "[No{conteudo=" + noAuxiliar.getConteudo() + "}]-->";
             noAuxiliar = noAuxiliar.getNoPosterior();
         }
         stringRetorno += "null";
         return stringRetorno;
     }
-
-    
 
 }
