@@ -39,16 +39,57 @@ public class ListaDuplamenteEncadeada<T> {
 
         NoDuplo<T> novoNo = new NoDuplo<>(element);
         novoNo.setNoPosterior(null);
-        if (size() == 0) {
-            novoNo.setNoAnterior(null);
+        novoNo.setNoAnterior(ultimoNoDuplo);
+        ultimoNoDuplo = novoNo;
+        this.tamanhoLista++;
+        if (primeiroNoDuplo == null) {
             primeiroNoDuplo = novoNo;
-            ultimoNoDuplo = novoNo;
-            tamanhoLista++;
-            return;
         }
 
     }
 
-    
+    public void add(int index, T element) {
+
+        NoDuplo<T> noAuxiliar = getNo(index);
+        NoDuplo<T> novoNo = new NoDuplo<>(element);
+        novoNo.setNoPosterior(noAuxiliar);
+
+        if (novoNo.getNoPosterior() != null) {
+            novoNo.setNoAnterior(noAuxiliar.getNoAnterior());
+            novoNo.getNoPosterior().setNoAnterior(novoNo);
+        } else {
+            novoNo.setNoAnterior(ultimoNoDuplo);
+            ultimoNoDuplo = novoNo;
+        }
+
+        if (index == 0) {
+            primeiroNoDuplo = novoNo;
+        } else {
+            novoNo.getNoAnterior().setNoPosterior(novoNo);
+        }
+
+        this.tamanhoLista++;
+
+    }
+
+    public void remove(int index) {
+
+        NoDuplo<T> noAuxiliar = getNo(index);
+
+        if (noAuxiliar == ultimoNoDuplo) {
+            ultimoNoDuplo = noAuxiliar.getNoAnterior();
+            noAuxiliar.getNoAnterior().setNoPosterior(null);
+        }
+        if (index == 0) {
+            primeiroNoDuplo = noAuxiliar.getNoPosterior();
+            noAuxiliar.getNoPosterior().setNoAnterior(null);
+        } else {
+            noAuxiliar.getNoAnterior().setNoPosterior(noAuxiliar.getNoPosterior());
+            noAuxiliar.getNoPosterior().setNoAnterior(noAuxiliar.getNoAnterior());
+        }
+
+        this.tamanhoLista--;
+
+    }
 
 }
