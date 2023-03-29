@@ -6,7 +6,8 @@
         "estrutura-de-dados\\fila",
         "estrutura-de-dados\\listas-encadeadas",
         "estrutura-de-dados\\listas-dulpamente-encadeadas",
-        "estrutura-de-dados\\listas-circulares"
+        "estrutura-de-dados\\listas-circulares",
+        "estrutura-de-dados\\arvores"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
