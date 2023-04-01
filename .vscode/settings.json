@@ -7,7 +7,8 @@
         "estrutura-de-dados\\listas-encadeadas",
         "estrutura-de-dados\\listas-dulpamente-encadeadas",
         "estrutura-de-dados\\listas-circulares",
-        "estrutura-de-dados\\arvores"
+        "estrutura-de-dados\\arvores",
+        "estrutura-de-dados\\equals-hashcode"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
